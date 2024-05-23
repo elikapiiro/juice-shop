@@ -574,6 +574,7 @@ restoreOverwrittenFilesWithOriginals().then(() => {
   app.get('/rest/saveLoginIp', saveLoginIp())
   app.post('/rest/user/data-export', security.appendUserId(), imageCaptcha.verifyCaptcha())
   app.post('/rest/user/data-export', security.appendUserId(), dataExport())
+  app.post('/rest/user/some-risky-export', security.appendUserId(), dataExport())
   app.get('/rest/languages', languageList())
   app.get('/rest/order-history', orderHistory.orderHistory())
   app.get('/rest/order-history/orders', security.isAccounting(), orderHistory.allOrders())
